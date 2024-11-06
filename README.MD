@@ -415,7 +415,6 @@ ORDER BY p.precio DESC
 LIMIT 1;
 
 
-
 35. Lista los clientes cuyo primer pedido fue un año después de su registro.
 
 SELECT c.nombre
@@ -435,7 +434,6 @@ AND p.fecha_pedido >= DATE_ADD(c.fecha_registro, INTERVAL 1 YEAR);
 SELECT nombre
 FROM productos
 WHERE stock < (SELECT AVG(stock) FROM productos);
-
 
 
 
@@ -460,7 +458,6 @@ WHERE c.fecha_registro >= DATE_SUB(CURDATE(), INTERVAL 1 YEAR);
 
 
 
-
 39. Obtén el nombre del empleado que gestionó el mayor número de pedidos.
 
 SELECT e.nombre
@@ -469,7 +466,6 @@ JOIN pedidos p ON e.empleado_id = p.empleado_id
 GROUP BY e.empleado_id
 ORDER BY COUNT(p.pedido_id) DESC
 LIMIT 1;
-
 
 
 40. Lista los productos que han sido comprados en cantidades mayores que el promedio de cantidad de compra de todos los productos.
